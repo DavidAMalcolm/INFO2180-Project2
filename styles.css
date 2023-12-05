@@ -79,6 +79,7 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     background-position: 5px center;
+    cursor: pointer;
 }
 
 footer{

@@ -1,6 +1,6 @@
 "use strict";
-
-let prompt = document.getElementById("prompter");
+document.addEventListener("DOMContentLoaded",function(){
+    let prompt = document.getElementById("prompter");
 
 prompt.addEventListener("click",function(event){
     event.preventDefault();
@@ -16,9 +16,15 @@ prompt.addEventListener("click",function(event){
             let resolution = responseText;
             if (resolution.includes("succesfull")){
                 //something
+                console.log(resolution);
+            }
+            else{
+                alert("Incorrect User Information");
             }
         })
         .catch(error=>{
             console.error("Error:"+ error);
         })
+})
+
 })
