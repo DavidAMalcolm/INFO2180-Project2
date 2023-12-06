@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User</title>
+    <link rel="stylesheet" href="adder.css">
+    <script src="add.js"></script>
+</head>
+        <h1>New User</h1>
+        <form action="register.php" method="POST" id="addForm">
+            <div class="together">
+                <label for="first">First Name</label>
+                <input type="text" placeholder="Jane" id="first" name="firstname">
+            </div>
+            <div class="together">
+                <label for="last">Last Name</label>
+                <input type="text" placeholder="Doe" id="last" name="lastname">
+            </div>
+            <div class="together">
+                <label for="mail">Email</label>
+                <input type="text" placeholder="something@example.com" id="mail" name="email">
+            </div>
+            <div class="together">
+                <label for="passkey">Password</label>
+                <input type="password" id="passkey" name="pskey" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" required>
+            </div>
+            <div class="together">
+                <label for="roler">Role</label>
+                <select name="roles" id="roler">
+                    <option value="Member">
+                        Member
+                    </option>
+                    <option value="Admin">
+                        Admin
+                    </option>
+                </select>
+            </div>
+            <input type="submit" value="Save" id="sub" onclick="hangON(event)">
+        </form>
+</html>

@@ -7,17 +7,19 @@
     }
     
     if (isset($_POST['username'])){
-        $username = isset($_POST['username']) ? $mysqli->real_escape_string($_POST['username']) : '';
-        $password = $_POST['password'];
+        $username = $_POST['username'];
+        $password = $_POST['pass'];
         
-        $query = $pdo->prepare("SELECT password FROM dorm WHERE username = :username");
+        $query = $pdo->prepare("SELECT password FROM users WHERE email = :username");
         //if the query used was valid
         if ($query) {
             //bind the username to the previous query
             $query->bindParam(':username', $username, PDO::PARAM_STR);
             //execute the query
             $query->execute();
-            $storedPassword = $query->fetch(PDO::FETCH_ASSOC);
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            
+            $storedPassword = $result['password'];
             
             if (password_verify($password,$storedPassword)){
                 session_start();

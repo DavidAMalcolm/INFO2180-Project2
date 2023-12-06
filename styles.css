@@ -1,5 +1,7 @@
 body{
     margin:0px;
+    display: grid;
+    grid-template-columns: 0.5fr 4fr;
 }
 
 
@@ -23,12 +25,14 @@ img{
 
 header{
     display: flex;
+    grid-column: span 2;
     margin: 0px;
     background-color: #061826;
 }
 
 main{
     display: flex;
+    grid-column: span 2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -92,4 +96,5 @@ footer{
     justify-content: center;
     z-index: 1;
     border-top: 1px solid #80808029;
+    grid-column: span 2;
 }
