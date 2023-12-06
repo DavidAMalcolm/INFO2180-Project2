@@ -8,6 +8,7 @@ body{
 #logoPrint{
     display: flex;
     color: white;
+    align-items: center;
 }
 
 #logoPrint p{
