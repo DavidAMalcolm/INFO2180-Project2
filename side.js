@@ -10,6 +10,11 @@ function userList(event){
   getPage("users.php");
 }
 
+function homePage(event){
+  event.preventDefault();
+  getPage("dashboard.php");
+}
+
 function logOut(event){
   event.preventDefault();
   logoutUser();

@@ -32,7 +32,6 @@ table{
 }
 
 h1{
-    margin-left:40px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -45,6 +44,42 @@ h1{
     border-radius: 5px;
 }
 
+#contraband p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
+
+#selection{
+    display: flex;
+    gap: 20px;
+}
+
+#heading{
+    margin-left:40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact{
+    height: 40px;
+    color: white;
+    background-color: #5945ED;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background-position: 5px center;
+    cursor: pointer;
+}
 body{
     background-color: rgba(128, 128, 128, 0.123);
+}
+.sorting{
+    color: #808080;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: arial;
 }
