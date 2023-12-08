@@ -55,7 +55,7 @@ h1{
 }
 
 #heading{
-    margin-left:40px;
+    margin-left:20px;
     display: flex;
     justify-content: space-between;
 }
@@ -82,4 +82,10 @@ body{
     font-weight: bold;
     cursor: pointer;
     font-family: arial;
+}
+
+.sorting.select{
+    color:#5945ED;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
 }
