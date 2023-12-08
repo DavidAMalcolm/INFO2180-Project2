@@ -1,0 +1,46 @@
+table{
+    z-index: 1;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+    background-color: white;
+    border-radius: 5px;
+}
+
+#userList {
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-collapse: collapse;
+}
+
+#userList th, #userList td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#userList th {
+    background-color: #80808029;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#userList td{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#userList th, #userList td {
+    border: none; 
+}
+
+h1{
+    margin:20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#contraband{
+    margin: 20px;
+    padding: 20px;
+    z-index: 1;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+    background-color: white;
+    border-radius: 5px;
+}

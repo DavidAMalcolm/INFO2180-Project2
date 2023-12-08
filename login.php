@@ -10,7 +10,7 @@
         $username = $_POST['username'];
         $password = $_POST['pass'];
         
-        $query = $pdo->prepare("SELECT password FROM users WHERE email = :username");
+        $query = $pdo->prepare("SELECT password, role FROM users WHERE email = :username");
         //if the query used was valid
         if ($query) {
             //bind the username to the previous query
@@ -20,10 +20,12 @@
             $result = $query->fetch(PDO::FETCH_ASSOC);
             
             $storedPassword = $result['password'];
+            $role = $result['role'];
             
             if (password_verify($password,$storedPassword)){
                 session_start();
                 $_SESSION['user'] = $username;
+                $_SESSION['role'] = $role;
                 echo "success";
             }
             else{

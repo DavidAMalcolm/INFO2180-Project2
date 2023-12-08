@@ -5,6 +5,17 @@ function newUser(event){
     getPage("add.html");
 }
 
+function userList(event){
+  event.preventDefault();
+  getPage("users.php");
+}
+
+function logOut(event){
+  event.preventDefault();
+  getSide("");
+  logoutUser();
+}
+
 function handleMenuItemClick(caseNo) {
     switch (caseNo) {
       case 0:
@@ -14,7 +25,7 @@ function handleMenuItemClick(caseNo) {
         getPage('add.html');
         break;
       case 2:
-        getPage();
+        getPage("users.php");
         break;
       default:
         getPage();
@@ -31,4 +42,32 @@ function getPage(url){
         }).catch(error => {
             console.log(error);
         })
+}
+
+
+function logoutUser() {
+  fetch("logout.php")
+      .then(response => {
+          if (response.ok) {
+              return response.text();
+          } else {
+              throw new Error("Logout request failed.");
+          }
+      })
+      .then(() => {
+          getPage("index.html");
+      })
+      .catch(error => {
+          console.error("Error: " + error.message);
+      });
+}
+
+function getSide(url){
+  fetch(url)
+      .then(response => response.text())
+      .then(html=>{
+          document.getElementsByTagName('nav')[0].innerHTML = html;
+      }).catch(error => {
+          console.log(error);
+      })
 }
