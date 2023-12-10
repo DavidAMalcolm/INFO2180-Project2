@@ -5,6 +5,9 @@
    if (!$pdo) {
        die("Connection failed");
    }
+
+   session_start();
+   $id = $_SESSION['id'];
    
    if (isset($_GET['mail'])){
     $email = $_GET['mail'];
@@ -57,8 +60,17 @@
            );
        }
    }
+   $dateTimeUpdated = DateTime::createFromFormat('m-d-Y', $person['updated']);
 
-
+   if ($dateTimeUpdated !== false) {
+       $person['updated'] = $dateTimeUpdated->format('F j, Y');
+   } 
+   
+   $dateTimeCreated = DateTime::createFromFormat('m-d-Y', $person['created']);
+   
+   if ($dateTimeCreated !== false) {
+       $person['created'] = $dateTimeCreated->format('F j, Y');
+   } 
    
 ?>
 
@@ -81,15 +93,15 @@
     </div>
     
     <div id="buttons">
-        <button id="assign">Assign to me</button>
-        <button id="switch">Switch to <?=$person['type']?></button>
+        <button id="assign" onclick="assignMe(event)">Assign to me</button>
+        <button id="switch" onclick="switchMe(event)">Switch to <?php echo (strpos($person['type'], "Support") !== false) ? "Sales Lead" : "Support"; ?></button>
     </div>
 </div>
 
 <div id="info">
     <div class="organ">
         <h4>Email</h4>
-        <p><?=$person['email']?></p>
+        <p id="emailer"><?=$person['email']?></p>
     </div>
     <div class="organ">
         <h4>
@@ -117,7 +129,7 @@
         </div>
     </div>
     <div id="noteAdder">
-        <h4>Add a note about <?=$rows['firstname']?></h4>
+        <h4>Add a note about <?=$person['name']?></h4>
         <textarea type="text" id="text-box" >Add Details Here</textarea>
         <button id="addNote">Add Note</button>
     </div>
