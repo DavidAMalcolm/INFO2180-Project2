@@ -36,11 +36,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Screen</title>
+    <script src="dash.js"></script>
 </head>
 <body>
     <div id="heading">
         <h1>Dashboard</h1>
-        <button id="contact">Add Contact</button>
+        <button id="contact" onclick="addContact(event)">Add Contact</button>
     </div>
         <div id="contraband">
             <div id="selection">
@@ -57,6 +58,7 @@
                         <th>Email</th>
                         <th>Company</th>
                         <th>Type</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,7 +67,8 @@
                             <td><?=$person['title'] . " " . $person["name"]?></td>
                             <td><?=$person['email']?></td>
                             <td><?=$person['company']?></td>
-                            <td><?=$person['type']?></td>
+                            <td class="<?php echo (strpos($person['type'], 'Support') !== false) ? 'support' : 'sales'; ?>"><?=$person['type']?></td>
+                            <td><a href=# class="views" data-custom-value="<?=$person['email']?>" onclick="detailView(event)">View</a></td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>

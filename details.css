@@ -1,0 +1,130 @@
+#Profile p{
+    color: #413f3f;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+#Profile{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+#Profile h1{
+    margin: 5px 0px;
+    padding: 0px;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#profilemg{
+    width: 100px;
+}
+
+#toppings{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+#assign{
+    height: 40px;
+    color: black;
+    background-color: #19ec35c4;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background-position: 5px center;
+    cursor: pointer;
+}
+
+#switch{
+    height: 40px;
+    color: black;
+    background-color: #ebba19b2;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background-position: 5px center;
+    cursor: pointer;
+}
+
+#info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #80808029;
+    box-shadow: 10px 10px 10px #80808029;
+    margin:20px;
+    padding:10px;
+    border-radius: 5px;
+}
+
+.organ h4{
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(22, 77, 77, 0.507);
+}
+
+.organ p{
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#notes{
+    display: flex;
+    flex-direction: column;
+    margin:20px;
+    border: 1px solid #80808029;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #80808029;    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#notes h3{
+    border-bottom: 1px solid #80808029;
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.grouping{
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.date{
+    color: rgba(22, 77, 77, 0.507);
+}
+
+#addNote{
+    height: 40px;
+    color: white;
+    background-color: #5945ED;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background-position: 5px center;
+    cursor: pointer;
+    width: fit-content;
+    justify-self: end; 
+}
+
+#text-box{
+    border-radius: 5px;
+    border: 1px solid #80808029;
+    height:200px;
+    margin: 0px;
+}
+
+#noteAdder{
+    display: grid;
+    grid-template-rows: 50px 1fr 70px;
+    gap:0px;
+    align-items: center;
+    padding:20px;
+    background-color: #80808013;
+}

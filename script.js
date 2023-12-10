@@ -22,7 +22,7 @@ prompt.addEventListener("click",function(event){
             let resolution = responseText;
             if (resolution.includes("success")){
                 //something
-                getPage("add.html");
+                getPage("dashboard.php");
                 getSide("sidebar.html");
                 console.log(resolution);
             }
