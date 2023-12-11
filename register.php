@@ -12,8 +12,8 @@
         $email = $_POST['email'];
         $password = password_hash($_POST['pass'],PASSWORD_DEFAULT);
         $role = $_POST['role'];
-        var_dump($firstname);
-        $query = $pdo->prepare("INSERT INTO users(firstname,lastname,password,email,role,created_at) VALUES(:firstname,:lastname,:password,:email,:role,NOW()");
+
+        $query = $pdo->prepare("INSERT INTO users(firstname,lastname,password,email,role,created_at) VALUES(:firstname,:lastname,:password,:email,:role,NOW())");
         //if the query used was valid
         if ($query) {
             //bind the parameters to the previous query
@@ -22,7 +22,7 @@
             $query->bindParam(':password', $password);
             $query->bindParam(':email', $email);
             $query->bindParam(':role', $role);
-            //execute the query
+            //execute the query -_-
             if ($query->execute()){
                 echo "success";
             }

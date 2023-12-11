@@ -8,11 +8,20 @@
         const email = document.getElementById("mail").value;
         const password = document.getElementById("passkey").value;
         const role = document.getElementById("roler").value;
-        console.log(firstname);
-        console.log(lastname);
-        console.log(email);
-        console.log(password);
-        console.log(role);
+
+            
+        if (!firstname || !lastname || !email || !password || !role) {
+            alert("All fields are required");
+            return;
+        }
+
+
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        if (!passwordPattern.test(password)) {
+            alert("Password must follow the pattern: At least one lowercase letter, one uppercase letter, one digit, and be at least 8 characters long");
+            return;
+        }
+
         fetch("register.php", {
             method: "POST",
             headers: {

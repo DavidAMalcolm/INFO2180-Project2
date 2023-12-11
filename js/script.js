@@ -7,6 +7,11 @@ prompt.addEventListener("click",function(event){
     const user = document.getElementById("user").value;
     const pass = document.getElementById("pass").value;
 
+    if (!user || !pass) {
+        alert("Username and password are required");
+        return;
+    }
+
     fetch("login.php",{
         method:"POST",
         headers: {

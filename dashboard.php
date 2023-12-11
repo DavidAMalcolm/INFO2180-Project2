@@ -32,11 +32,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="css/dash.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Screen</title>
-    <script src="dash.js"></script>
+    <script src="js/dash.js"></script>
 </head>
 <body>
     <div id="heading">
@@ -46,10 +46,10 @@
         <div id="contraband">
             <div id="selection">
                 <p>Filter By: </p>
-                <button class="sorting">All</button>
-                <button class="sorting">Sales Lead</button>
-                <button class="sorting">Support</button>
-                <button class="sorting">Assigned to me</button>
+                <button class="sorting select" onclick="filterTable(event)" data-type="all">All</button>
+                <button class="sorting" onclick="filterTable(event)" data-type="Sales Lead">Sales Lead</button>
+                <button class="sorting" onclick="filterTable(event)" data-type="support">Support</button>
+                <button class="sorting" onclick="filterTable(event)" data-type="assigned">Assigned to me</button>
             </div>
             <table id="userList">
                 <thead>

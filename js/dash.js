@@ -81,6 +81,25 @@ function switchMe(event){
     
 }
 
+let currentFilter ="all";
+
+function filterTable(event){
+    const sortingButtons = document.querySelectorAll('.sorting');
+    const selectedType = event.target.dataset.type;
+    sortingButtons.forEach(btn => btn.classList.remove('select'));
+    event.target.classList.add('select');
+     fetch(`filter.php?type=${selectedType}`)
+        .then(response => response.text())
+        .then(html => {
+            document.querySelector('#userList tbody').innerHTML = html;
+            currentFilter = selectedType;
+        })
+        .catch(error => {
+                console.error('Error:', error);
+        });
+}
+
+
 
 function getPage(url){
     fetch(url)
