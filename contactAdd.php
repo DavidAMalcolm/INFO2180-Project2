@@ -29,8 +29,8 @@ if ($query->execute()){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New User</title>
-    <link rel="stylesheet" href="contact.css">
-    <script src="add.js"></script>
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="js/add.js"></script>
 </head>
         <h1>New Contact</h1>
         <form action="register.php" method="POST" id="addForm">

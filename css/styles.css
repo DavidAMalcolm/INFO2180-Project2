@@ -78,7 +78,7 @@ h1{
     background-color: #5945ED;
     border-radius: 10px;
     border: 1px solid white;
-    background-image: url("lock.svg");
+    background-image: url("../img/lock.svg");
     background-size: 20px;
     background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;

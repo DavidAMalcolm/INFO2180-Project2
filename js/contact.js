@@ -49,4 +49,36 @@ function contactAdd(event){
         })
     }
 
+    function notePress(event){
+        event.preventDefault();
+        const notes = document.getElementById("text-box").value;
+        const mailing = document.getElementById("emailer").innerText;
+        fetch("notes.php", {
+            method: "POST",
+            headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams({
+                note: notes,
+                email:mailing
+            }).toString(),
+        })
+            .then((response)=>response.text())
+            .then((responseText)=>{
+                let resolution = responseText;
+                console.log(resolution);
+                if (resolution.includes("success")){
+                    alert("Note Submitted");
+                    getPage("dashboard.php");
+                }
+                else{
+                    alert("Error Submitting Notes");
+                    console.log(responseText);
+                }
+            })
+            .catch(error=>{
+                console.error("Error:"+ error);
+            })
+    }
+
 
